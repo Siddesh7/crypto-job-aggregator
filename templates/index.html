@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsN1</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="tsparticles"></div>
+    <nav><a href="/"><img width="100px" src="{{url_for('static',filename='logo.png')}}" alt="logo"></a></nav>
+    
+    <div class="wrap">
+        <div class="search">
+            <form action="/" method="post">
+                <input type="text" class="searchTerm" name="category" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <h3 style="color: aliceblue;text-align: center;margin-top: 60px;">Search for your favourite crypto job or select category from below!</h3>
+     
+    <section class="main-container">
+        <div class="item"><a href="/solidity">Solidity</a></div>
+        <div class="item"><a href="/web3">Web3</a></div>
+        <div class="item"><a href="/defi">DeFi</a></div>
+        <div class="item"><a href="/nft">NFT</a></div>
+        <div class="item"><a href="/marketing">Marketing</a></div>
+        <div class="item"><a href="/Community">Community</a></div>
+        <div class="item"><a href="/developer">Developer</a></div>
+        <div class="item"><a href="/intern">Intern</a></div>
+        <div class="item"><a href="/meme-creator">Meme Creator</a></div>
+        <div class="item"><a href="/bitcoin">Bitcoin</a></div>
+        <div class="item"><a href="/ethereum">Ethereum</a></div>
+        <div class="item"><a href="/blockchain">Blockchain</a></div>
+       
+   
+        
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.32.0/tsparticles.min.js"></script>
+    <script>
+        tsParticles.load("tsparticles", {
+        background: {
+            color: {
+            value: "#000000"
+            }
+        },
+        fullScreen: {
+            enable: true,
+            zIndex: -1
+        },
+        interactivity: {
+            detectsOn: "window"
+        },
+        emitters: {
+            position: {
+            x: 50,
+            y: 0
+            },
+            rate: {
+            quantity: 1,
+            delay: 0.50
+            }
+        },
+        particles: {
+            color: {
+            value: ["#1E00FF", "#FF0061", "#E1FF00", "#00FF9E"]
+            },
+            move: {
+            decay: 0.05,
+            direction: "top",
+            enable: true,
+            gravity: {
+                enable: true
+            },
+            outModes: {
+                top: "none",
+                default: "destroy"
+            },
+            speed: { min: 25, max: 50 }
+            },
+            number: {
+            value: 0
+            },
+            opacity: {
+            value: 0.5
+            },
+            rotate: {
+            value: {
+                min: 0,
+                max: 360
+            },
+            direction: "random",
+            animation: {
+                enable: true,
+                speed: 15
+            }
+            },
+            tilt: {
+            direction: "random",
+            enable: true,
+            value: {
+                min: 0,
+                max: 360
+            },
+            animation: {
+                enable: true,
+                speed: 30
+            }
+            },
+            size: {
+            value: 3
+            },
+            roll: {
+            darken: {
+                enable: false,
+                value: 25
+            },
+            enable: false,
+            speed: {
+                min: 5,
+                max: 15
+            }
+            },
+            wobble: {
+            distance: 30,
+            enable: true,
+            speed: {
+                min: -7,
+                max: 7
+            }
+            },
+            shape: {
+            type: ["image","image","image","image"
+            ],
+            options: {
+                image: [
+                {
+                    src: "{{url_for('static',filename='btc.png')}}",
+                    width: 32,
+                    height: 32,
+                    particles: {
+                    size: {
+                        value: 32
+                    }
+                    }
+                },
+                {
+                    src: "{{url_for('static',filename='eth.png')}}",
+                    width: 32,
+                    height: 32,
+                    particles: {
+                    size: {
+                        value: 32
+                    }
+                    }
+                },
+                {
+                    src: "{{url_for('static',filename='xrp.png')}}",
+                    width: 32,
+                    height: 32,
+                    particles: {
+                    size: {
+                        value: 32
+                    }
+                    }
+                },
+                {
+                    src: "{{url_for('static',filename='doge.png')}}",
+                    width: 32,
+                    height: 32,
+                    particles: {
+                    size: {
+                        value: 32
+                    }
+                    }
+                }
+                ],
+                polygon: [
+                {
+                    sides: 5
+                },
+                {
+                    sides: 6
+                }
+                ],
+                character: [
+                {
+                    fill: true,
+                    font: "Verdana",
+                    value: ["💩", "🤡", "🍀", "🍙", "🦄", "⭐️"],
+                    style: "",
+                    weight: 400
+                }
+                ]
+            }
+            }
+        }
+        });
+
+    </script>
+    <script>
+      
+        window.onload=  function remove() {
+            sleep(10)
+            document.getElementById('tsparticles').remove();
+        }
+    </script>
+</body>
+</html>
